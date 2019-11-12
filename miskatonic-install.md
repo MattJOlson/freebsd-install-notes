@@ -131,9 +131,43 @@ the mystery deepens: diffing the file is `us.pc-ctrl.kbd` and diffing it
 against my custom `us.iso-swap.kbd` shows no diffs outside the first line
 version tag. as far as I can tell from `rc.conf(5)` the syntax from the 2015
 blog post still applies. wonder if this config file is getting superseded by
-something else, or if a cache needs to be updated. (I don't see a second copy of the "United States" keymap in `kbdmap(1)`'s menu.)
+something else, or if a cache needs to be updated. (I don't see a second copy
+of the "United States" keymap in `kbdmap(1)`'s menu.)
 
 well, let's try setting `keyboard=us.pc-ctrl` and rebooting
 
 yey! I mean, either that worked, or whatever `kbdmap(1)` did persisted
-somewhere else. either way, my keyboard is now levelled up in utility.
+somewhere else. either way, my keyboard is now levelled up in utility.o
+
+### some packages
+
+okay, let's make this a bit nicer. start with an MOTD revision - wait, this
+brings up memories of a blog post where someone tried "just editing `/etc/motd`
+and it didn't work, so this'll be fun. actually let's wait until I have a
+working `su` first.
+
+feels ironic to have to `su root` to install `sudo` but here we are. here's
+hoping I don't spend a lot of time hand-configuring machines, it's 2019 for
+god's sake.
+
+[x] `sudo`
+
+oh right, sudoers. I'd half hoped that wheel group users would be added by
+default. and lol, I keep getting errors because it's trying to "report the
+incident" via sendmail. anyway, `visudo` as root and uncommenting the line
+that starts with `%wheel` did the job. and now I'm installing vim, which also
+installs ruby?! I love the unix philosophy.
+
+[x] `vim`
+
+okay, now I have a vim installation without my favourite vim files. I've
+fretted occasionally that I don't have any dotfiles in version control,
+probably I should set that up at some point. so let's install git and create a
+dotfiles repo.
+
+[x] `git`
+
+(well, maybe we'll do the dotfiles repo thing later.)
+
+[x] `bash`
+
