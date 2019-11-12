@@ -184,3 +184,28 @@ you're keeping score from home, it's `\u@\h:\w\n\D{%Y/%m/%d %H:%M:%s} $ `)
 
 so at this point I have a working, modestly capable freebsd system and no easy
 way to get files onto or off of it (which is ironic, given its intended use).
+
+I installed the bells-and-whistles version of vim, I think I'm going to (try
+to) uninstall it and replace it with what I remember being a command-line only
+package. lol, the scroll for `pkg autoremove` just said some shit about "you
+should manually remove the..." and I hate everything. okay, for posterity,
+here's the relevant scrollback:
+
+```
+You should manually remove the "colord" user.
+You should manually remove the "colord" group
+You should manually remove the "cups" user.
+You should manually remove the "cups" user.
+You should manually remove the "avahi" group
+You should manually remove the "avahi" group
+You should manually remove the "polkitd" user.
+You should manually remove the "polkitd" group
+You should manually remove the "messagebus" user.
+You should manually remove the "messagebus" group
+You should manually remove the "_tss" user.
+You should manually remove the "_tss" group
+```
+
+(that `_tss` message came up twice)
+
+and... done, with astonishingly little crap. no external dependencies, even.
