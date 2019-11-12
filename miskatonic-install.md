@@ -171,3 +171,16 @@ dotfiles repo.
 
 [x] `bash`
 
+okay, now I need to figure out how I'm meant to change my shell politely. oh, I
+guess it's `chsh`, that's obvious. (not obvious is that it lets me specify my
+office phone number! wild) logout, login, all is good.
+
+I wonder if there's anything in the way of guardrails around getting a typo in
+the shell path.
+
+anyway, now we're well into Fuck Around With My Bash Config mode! started by
+setting `EDITOR=vim` and now let's dive down the prompt rabbit hole. (if
+you're keeping score from home, it's `\u@\h:\w\n\D{%Y/%m/%d %H:%M:%s} $ `)
+
+so at this point I have a working, modestly capable freebsd system and no easy
+way to get files onto or off of it (which is ironic, given its intended use).
