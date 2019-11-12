@@ -126,3 +126,14 @@ error and running it interactively will show me.
 d'oh! there's a `us.ctrl.kbd` map that does what I want. unfortunately I'm not
 sure that `kbdmap(1)` can be called in a startup script, it's one more trashbag
 TUI thing from first appearances.
+
+the mystery deepens: diffing the file is `us.pc-ctrl.kbd` and diffing it
+against my custom `us.iso-swap.kbd` shows no diffs outside the first line
+version tag. as far as I can tell from `rc.conf(5)` the syntax from the 2015
+blog post still applies. wonder if this config file is getting superseded by
+something else, or if a cache needs to be updated. (I don't see a second copy of the "United States" keymap in `kbdmap(1)`'s menu.)
+
+well, let's try setting `keyboard=us.pc-ctrl` and rebooting
+
+yey! I mean, either that worked, or whatever `kbdmap(1)` did persisted
+somewhere else. either way, my keyboard is now levelled up in utility.
