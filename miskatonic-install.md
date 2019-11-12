@@ -1,6 +1,6 @@
-# FreeBSD 12.1 installation notes
+# miskatonic - fileserver / light compute
 
-## fileserver / light compute - miskatonic
+## FreeBSD 12.1 installation notes
 
 Screen by screen:
 
@@ -92,3 +92,37 @@ installing the FreeBSD Handbook, mostly as proof that I can has internet.
 
 neat, clicking "exit" took _forever_ to get to "The installation is now
 finished". good tiems
+
+## Post-installation config
+
+so what's my hit list?
+
+- vim obviously
+- maybe bash first, this is all pkg/ports stuff
+- sudo or whatever utils (see below)
+
+oh god I need to remap capslock, let's do that first.
+
+### Remapping capslock
+
+this looks plausible: http://ake.in.th/2015/04/17/remap-capslock-to-ctrl-on-freebsd/
+
+> Assuming that you are using `us.iso.kbd`
+uh, I wonder how I'd find out. (the answer is hinted to be `kbdcontrol(1)` by
+the `kbdmap(5)` man page, but while technically correct that just dumps the
+keymap rather than telling you what file's in use)
+
+anyway, let's just try it.
+
+`sudo: command not found`
+
+fuck. well, `su` it is. Add `sudo` to the list of packages to install.
+
+it did not work. not for my user account, nor for root.
+
+looks like `kbdmap(1)` can be used to set keyboard maps, maybe I have a syntax
+error and running it interactively will show me.
+
+d'oh! there's a `us.ctrl.kbd` map that does what I want. unfortunately I'm not
+sure that `kbdmap(1)` can be called in a startup script, it's one more trashbag
+TUI thing from first appearances.
